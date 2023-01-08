@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>lmo-Lrc-Editor</title>
+    <link href="/src/assets/favicon.ico" rel="icon">
+</head>
+<body>
+<div id="lmo-app"></div>
+<script type="module" src="/src/main.ts"></script>
+<script>
+    void function (__FACTORY) {
+        __FACTORY && __FACTORY();
+    }(() => {
+        const st = new Date().getTime();
+
+        function onLoad() {
+            console.log('Startup time :', (new Date().getTime() - st) / 1000);
+            console.log("\n我想和你在一起，直到我不爱你。\n\n                    --李志《和你在一起》");
+            console.log('\n' + ' %c lmo-Lrc-Editor' + ' %c https://lrc.ayuanlmo.cn/' + '\n', 'color: #fff; font-weight: bold; background: #409EFF; padding:12px 0;font-size:14px;', 'background: #F9F3E3; padding:6px 0;');
+            console.log('Hi, there👋，欢迎使用 lmo-Lrc-Editor');
+            console.log('\n' + ' %c GitHub:' + ' %c https://github.com/ayuanlmo/lmo-lrc-editor' + '\n', 'color: #fff; background: purple;font-size:14px;border-radius:4px;', 'color:#fff;');
+            removeEventListener('load', onLoad);
+        }
+
+        addEventListener('load', onLoad);
+    });
+
+</script>
+</body>
+</html>

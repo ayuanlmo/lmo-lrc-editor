@@ -1,0 +1,7 @@
+#lmo-app {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #28282E;
+    overflow: hidden;
+}

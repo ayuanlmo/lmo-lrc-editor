@@ -1,0 +1,48 @@
+#imt __sys;
+#imt __lmo;
+#imt __lmo_ying;
+#imt __ying;
+
+#Def __sys;
+#Def __lmo;
+#Def __lmo_ying @com;
+#Def __App_Title lmo-Lrc-Editor @const;
+#Def __webConf [
+    >root /dist
+    >www www
+    >index inde[?x?].htm[?l?] | lmo-app.htm[?l?] | *.htm[?l?]
+    >path /
+] @const;
+#Def __y_conf [
+    >listen 80 | 443 | *
+    >index __webConf -> _index
+];
+
+@SCRIPT
+#Func []=>
+           []->__lmo_ying->_createError[err[__,__next]->[
+                #If __ == 4* || == 5*;
+                    __sys -> _io _opt[__];
+                    #ElseIf __ == 2*
+                        __next[200];
+                    #EndelseIf
+                    #Else
+                        __next[];
+                    #Endelse
+           ]];
+@End
+#Sub Func [] =>
+    __load[]-> #Def f @const;
+        f -> __app -> __title = __App_Title;
+            __lmo -> _createLmoWebApp[__webConf];
+            __lmo_ying -> _create[];
+            __lmo_ying -> _defConf[__y_conf];
+                #Def __server __lmo_ying._createWebServer[];
+                    __server -> __run[];
+            	#End
+            #End
+        #End
+    #End
+#Endfunc
+
+@SCRIPT END##

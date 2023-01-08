@@ -1,0 +1,14 @@
+{
+  "compilerOptions" : {
+    "composite" : true,
+    "module" : "ESNext",
+    "moduleResolution" : "Node",
+    "allowSyntheticDefaultImports" : true
+  },
+  "include" : [
+    "vite.config.ts",
+    "lmo.ts",
+    "./src/config/DevServerConfig.ts",
+    "./src/config/AppConfig.ts"
+  ]
+}
