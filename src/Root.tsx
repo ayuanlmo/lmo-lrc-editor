@@ -7,7 +7,7 @@ import Home from '@/views/Home';
 const Root = defineComponent({
     setup() {
         return (): JSX.Element => {
-            return <Home />;
+            return <Home/>;
         };
     }
 });
