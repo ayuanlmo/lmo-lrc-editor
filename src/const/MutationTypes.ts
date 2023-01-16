@@ -1,0 +1,9 @@
+export const SET_MEDIA_BLOB: string = 'SET_MEDIA_BLOB'; // 设置音频blob地址
+export const SET_LRC_LIST: string = 'SET_LRC_LIST'; // 歌词列
+export const SET_CURRENT_LRC_TAG: string = 'SET_CURRENT_LRC_TAG'; // 设置当前歌词列
+export const SET_MEDIA_PLAY_STATE: string = 'SET_MEDIA_PLAY_STATE';// 设置当前音频播放状态
+export const SET_MEDIA_CURRENT_TIME: string = 'SET_MEDIA_CURRENT_TIME';// 设置当前音频当前播放时间
+export const SET_MEDIA_CURRENT_DURATION: string = 'SET_MEDIA_CURRENT_DURATION';// 设置当前音频持续时间
+export const RESET_CURRENT_AUDIO: string = 'RESET_CURRENT_AUDIO';// 重置当前音频对象
+export const RESET_CURRENT_LRC_TAG: string = 'RESET_CURRENT_LRC_TAG';// 重置当前lrc tag
+export const RESET_LRC_LIST: string = 'RESET_LRC_LIST';// 重置当前歌词列
