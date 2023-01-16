@@ -5,9 +5,14 @@
 
   .lmo-lrc_editor_header_content {
     padding: 1.875rem 3.75rem;
+    justify-content: space-between;
+
+    button {
+      margin-right: 1.25rem;
+    }
 
     .lmo-lrc_editor_header_content_title {
-      h2{
+      h2 {
         font-size: 1.625rem;
         color: #36A0EC;
         font-weight: bold;
