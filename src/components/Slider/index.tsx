@@ -2,6 +2,7 @@ import './style.scss';
 import {defineComponent, onMounted, ref, watch} from "vue";
 
 const Slider = defineComponent({
+    name: 'YComponentSlider',
     props: {
         value: {
             type: Number,

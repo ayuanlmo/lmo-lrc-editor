@@ -5,6 +5,7 @@ import {defineComponent} from "vue";
 import Home from '@/views/Home';
 
 const Root = defineComponent({
+    name: 'YRootApp',
     setup() {
         return (): JSX.Element => {
             return <Home/>;

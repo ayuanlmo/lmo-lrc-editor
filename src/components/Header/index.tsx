@@ -4,6 +4,7 @@ import AppConfig from "@/config/AppConfig";
 import "@/components/Element/Button";
 
 const Header = defineComponent({
+    name: 'YHeader',
     setup() {
         return (): JSX.Element => {
             return <div class={'lmo-lrc_editor_header'}>

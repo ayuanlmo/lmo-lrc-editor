@@ -5,11 +5,12 @@ import MediaController from '@/components/MediaController';
 
 
 const Home = defineComponent({
+    name: 'YHome',
     setup() {
         return (): JSX.Element => {
             return <div class={'lmo-lrc_editor lmo_none_user_select lmo_position_absolute'}>
-                <Header />
-                <MediaController />
+                <Header/>
+                <MediaController/>
             </div>;
         };
     }

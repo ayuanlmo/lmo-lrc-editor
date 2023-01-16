@@ -4,6 +4,7 @@ import {defineComponent} from "vue";
 import Slider from '@/components/Slider';
 
 const MediaController = defineComponent({
+    name: 'YMediaController',
     setup() {
         return (): JSX.Element => {
             return <div class={'lmo-lrc_editor_media_controller'}>
@@ -12,7 +13,7 @@ const MediaController = defineComponent({
                         《忽然》-李志
                     </div>
                     <div class={'lmo-lrc_editor_media_controller_slider lmo_position_relative'}>
-                        <Slider value={20} />
+                        <Slider value={20}/>
                     </div>
                     <div class={'lmo-lrc_editor_media_controller_sec'}>
                         00:00:00
