@@ -142,3 +142,7 @@ export const IsMobileDevice: Function = (): boolean => {
 
     return type !== null;
 };
+
+export const CreateFileBlobUrl: Function = (file: File): any[] | string => {
+    return URL.createObjectURL(file);
+};
