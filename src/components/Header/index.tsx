@@ -2,10 +2,17 @@ import './style.scss';
 import {defineComponent} from "vue";
 import AppConfig from "@/config/AppConfig";
 import "@/components/Element/Button";
+import {SelectFile} from "@/utils";
 
 const Header = defineComponent({
     name: 'YHeader',
     setup() {
+        const selectMedia = (): void => {
+            SelectFile().then((file:File) => {
+                console.log(file);
+            });
+        };
+
         return (): JSX.Element => {
             return <div class={'lmo-lrc_editor_header'}>
                 <div class={'lmo-lrc_editor_header_content lmo_flex_box'}>
@@ -13,7 +20,7 @@ const Header = defineComponent({
                         <h2 class={'lmo_cursor_pointer_hover'}>{AppConfig.AppName}</h2>
                     </div>
                     <div>
-                        <Y-Button type={'primary'}>按钮</Y-Button>
+                        <Y-Button onclick={selectMedia} type={'primary'}>导入歌曲</Y-Button>
                         <Y-Button>导入歌词</Y-Button>
                         <Y-Button>打Tag</Y-Button>
                         <Y-Button>播放</Y-Button>
