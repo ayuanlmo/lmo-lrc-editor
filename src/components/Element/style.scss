@@ -79,3 +79,27 @@ $button_focus_color: #fbfbfd;
     }
   }
 }
+
+.lmo-message_box {
+  width: auto;
+  height: 3.125rem;
+  font-size: 1rem;
+  left: calc((100vw - 13.75rem) / 2);
+  top: 0.875rem;
+  border-radius: 0.625rem;
+
+  .lmo-message_box_content {
+    padding: 0.8125rem;
+  }
+}
+
+.lmo-message_box_success {
+  background: rgba(22, 153, 90, 0.1);
+  color: #0D7E48;
+  border: 0.0625rem solid #0D7E48;
+}
+.lmo-message_box_warning {
+  background: rgba(219, 137, 38, 0.1);
+  color: #925B19;
+  border: 0.0625rem solid #925B19;
+}

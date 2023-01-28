@@ -17,7 +17,7 @@
  * **/
 
 import './style.scss';
-import {defineComponent, ref, watch} from "vue";
+import {defineComponent, ref, VNode, watch,Teleport,h} from "vue";
 import closeSVG from '@/assets/svg/close.svg';
 
 const Dialog = defineComponent({
@@ -56,33 +56,37 @@ const Dialog = defineComponent({
                 show.value = true;
         });
 
-        return (): JSX.Element => {
+        return (): JSX.Element | VNode => {
             return show.value ?
-                    <div class={'lmo-dialog lmo_position_absolute animated fadeIn'}
-                         ref={'dialog'}>
-                        <div class={'lmo-dialog_content lmo_position_relative animated fadeInDown'}>
-                            <div class={'lmo-dialog_content_header lmo_flex_box lmo_none_user_select'}>
-                                <div class={'lmo-dialog_content_header_title'}>{props.title}</div>
-                                <div class={'lmo-dialog_content_header_close'}>
-                                    <img onClick={closeDialog} class={'lmo_cursor_pointer'} src={closeSVG} alt="close"/>
+                    <Teleport to={'body'}>
+                        <div class={'lmo-dialog lmo_position_absolute animated fadeIn'}
+                             ref={'dialog'}>
+                            <div class={'lmo-dialog_content lmo_position_relative animated fadeInDown'}>
+                                <div class={'lmo-dialog_content_header lmo_flex_box lmo_none_user_select'}>
+                                    <div class={'lmo-dialog_content_header_title'}>{props.title}</div>
+                                    <div class={'lmo-dialog_content_header_close'}>
+                                        <img onClick={closeDialog} class={'lmo_cursor_pointer'} src={closeSVG}
+                                             alt="close"/>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class={'lmo-dialog_content_view lmo_position_absolute'}>
+                                <div class={'lmo-dialog_content_view lmo_position_absolute'}>
+                                    {
+                                            slots.default && slots.default()
+                                    }
+                                </div>
                                 {
-                                        slots.default && slots.default()
+                                    slots.footer ? slots.footer() :
+                                            <div class={'lmo-dialog_footer lmo_position_absolute'}>
+                                                <Y-Button onClick={() => {
+                                                    emit('cancel');
+                                                }
+                                                }>取消</Y-Button>
+                                                <Y-Button type={'primary'} onClick={emit('confirm')}>确定</Y-Button>
+                                            </div>
                                 }
                             </div>
-                            {
-                                slots.footer ? slots.footer() : <div class={'lmo-dialog_footer lmo_position_absolute'}>
-                                    <Y-Button onClick={() => {
-                                        emit('cancel');
-                                    }
-                                    }>取消</Y-Button>
-                                    <Y-Button type={'primary'} onClick={emit('confirm')}>确定</Y-Button>
-                                </div>
-                            }
                         </div>
-                    </div> : <div></div>;
+                    </Teleport> : <div></div>;
         };
     }
 });
