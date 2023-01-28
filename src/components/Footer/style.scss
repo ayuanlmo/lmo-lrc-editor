@@ -1,0 +1,17 @@
+.lmo-lrc_editor_footer {
+  width: 100vw;
+  height: 1.875rem;
+  bottom: 0;
+  font-size: 0.625rem;
+  color: #595960;
+  line-height: 1.875rem;
+  background: #212126;
+
+  .lmo-lrc_editor_footer_info {
+    padding-left: 3.75rem;
+
+    span {
+      margin-right: 1rem;
+    }
+  }
+}
