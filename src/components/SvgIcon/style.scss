@@ -1,0 +1,9 @@
+.lmo-svg {
+  &:hover {
+    svg {
+      path {
+        fill: #366DEC;
+      }
+    }
+  }
+}
