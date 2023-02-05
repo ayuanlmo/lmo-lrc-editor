@@ -2,16 +2,9 @@
  * This component is an audio player
  * @author ayuanlmo
  * @date 2023/01
- * @class
- * @constructor
- * **/
-
-/**
  * @class LmoAudioPlayer
  * @constructor
  * @param url {string} Audio url
- * @author ayuanlmo
- * @description 音频播放器
  * **/
 
 export default class LmoAudioPlayer {
@@ -58,7 +51,7 @@ export default class LmoAudioPlayer {
             if (sfc) {
                 this.Audio.currentTime = 0;
                 setTimeout(async () => {
-                    await this.Play();
+                    await this.Audio.play();
                 });
             } else {
                 await this.Continue();
