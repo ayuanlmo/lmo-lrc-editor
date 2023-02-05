@@ -1,6 +1,6 @@
-$view_height : calc(100vh - 5.875rem - 3.75rem - 1.875rem - (1.33rem * 3));
+$view_height: calc(100vh - 5.875rem - 3.75rem - 1.875rem - (1.33rem * 3));
 
-.lmo-scroll_view{
+.lmo-scroll_view {
   height: calc($view_height - 4rem);
 }
 
@@ -31,6 +31,10 @@ $view_height : calc(100vh - 5.875rem - 3.75rem - 1.875rem - (1.33rem * 3));
         &:hover {
           background: #36363D;
         }
+      }
+
+      .lmo-lrc_editor_lrc_view_content_list_item_hover {
+        background: #36363D;
       }
     }
   }
