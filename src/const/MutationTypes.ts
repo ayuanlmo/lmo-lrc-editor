@@ -1,4 +1,6 @@
 export const SET_MEDIA_BLOB: string = 'SET_MEDIA_BLOB'; // 设置音频blob地址
+export const SET_SLIDER_KEY: string = 'SET_SLIDER_KEY';
+export const SET_MEDIA_NAME: string = 'SET_MEDIA_NAME';
 export const SET_LRC_LIST: string = 'SET_LRC_LIST'; // 歌词列
 export const SET_CURRENT_LRC_TAG: string = 'SET_CURRENT_LRC_TAG'; // 设置当前歌词列
 export const SET_MEDIA_PLAY_STATE: string = 'SET_MEDIA_PLAY_STATE';// 设置当前音频播放状态
