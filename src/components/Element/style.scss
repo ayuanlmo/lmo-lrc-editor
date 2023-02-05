@@ -98,8 +98,23 @@ $button_focus_color: #fbfbfd;
   color: #0D7E48;
   border: 0.0625rem solid #0D7E48;
 }
+
 .lmo-message_box_warning {
   background: rgba(219, 137, 38, 0.1);
   color: #925B19;
   border: 0.0625rem solid #925B19;
+}
+
+.lmo-textarea {
+  font-size: 1rem;
+  color: #C9C9D0;
+  width: 90%;
+  text-align: center;
+  line-height: 2rem;
+  border: 0;
+  background-color: rgb(7 81 128 / 0%);
+  position: absolute;
+  left: calc(5%);
+  height: 90%;
+  top: 5%;
 }

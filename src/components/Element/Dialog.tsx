@@ -17,7 +17,7 @@
  * **/
 
 import './style.scss';
-import {defineComponent, ref, VNode, watch,Teleport,h} from "vue";
+import {defineComponent, ref, VNode, watch, Teleport, h} from "vue";
 import closeSVG from '@/assets/svg/close.svg';
 
 const Dialog = defineComponent({
@@ -36,6 +36,7 @@ const Dialog = defineComponent({
             }
         }
     },
+    emits: ['close', 'cancel', 'confirm'],
     setup(props, {slots, emit}) {
         const show = ref<boolean>(props.modelValue.value);
 
@@ -65,8 +66,12 @@ const Dialog = defineComponent({
                                 <div class={'lmo-dialog_content_header lmo_flex_box lmo_none_user_select'}>
                                     <div class={'lmo-dialog_content_header_title'}>{props.title}</div>
                                     <div class={'lmo-dialog_content_header_close'}>
-                                        <img onClick={closeDialog} class={'lmo_cursor_pointer'} src={closeSVG}
-                                             alt="close"/>
+                                        <img
+                                                onClick={closeDialog}
+                                                class={'lmo_cursor_pointer'}
+                                                src={closeSVG}
+                                                alt="close"
+                                        />
                                     </div>
                                 </div>
                                 <div class={'lmo-dialog_content_view lmo_position_absolute'}>
@@ -79,9 +84,17 @@ const Dialog = defineComponent({
                                             <div class={'lmo-dialog_footer lmo_position_absolute'}>
                                                 <Y-Button onClick={() => {
                                                     emit('cancel');
+                                                    show.value = false;
                                                 }
                                                 }>取消</Y-Button>
-                                                <Y-Button type={'primary'} onClick={emit('confirm')}>确定</Y-Button>
+                                                <Y-Button
+                                                        type={'primary'}
+                                                        onClick={
+                                                            () => {
+                                                                emit('confirm');
+                                                                show.value = false;
+                                                            }
+                                                        }>确定</Y-Button>
                                             </div>
                                 }
                             </div>

@@ -1,6 +1,7 @@
 import {App} from 'vue';
 import Button from '@/components/Element/Button';
 import Dialog from '@/components/Element/Dialog';
+import Textarea from '@/components/Element/Textarea';
 import MessageBox from "@/components/Element/MessageBox";
 import SvgIcon from "@/components/SvgIcon";
 
@@ -10,5 +11,6 @@ export default {
         app.component(Dialog.name, Dialog);
         app.component(MessageBox.name, MessageBox);
         app.component(SvgIcon.name, SvgIcon);
+        app.component(Textarea.name, Textarea);
     }
 };
