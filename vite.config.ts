@@ -21,9 +21,14 @@ export default defineConfig({
             output: {
                 entryFileNames: 'js/__lmo-js_[name].y.js',
                 chunkFileNames: 'js/__lmo-js_[name]-[hash].y.js',
-                manualChunks: (item: string): string => {
-                    if (item.includes('node_modules'))
-                        return item.toString().split('node_modules/')[1].split('/')[0].toString();
+                manualChunks: {
+                    core: ['vue', 'vuex'],
+                    index: ['/src/main.ts'],
+                    main: ['/src/Root.tsx'],
+                    utils: ['/src/utils/index.ts'],
+                    config: ['/src/config/AppConfig.ts'],
+                    animate: ['/src/style/animate.min.css'],
+                    'lmo-style': ['/src/style/lmo-style.scss']
                 },
                 assetFileNames: (info): string => {
                     const option: string = path.basename(info.name);
@@ -36,6 +41,11 @@ export default defineConfig({
                 }
             }
         }
+    },
+    preview: {
+        port: 8081,
+        host: 'localhost',
+        open: true
     },
     optimizeDeps: {
         force: true
