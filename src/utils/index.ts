@@ -146,3 +146,9 @@ export const IsMobileDevice: Function = (): boolean => {
 export const CreateFileBlobUrl: Function = (file: File): any[] | string => {
     return URL.createObjectURL(file);
 };
+
+export const CreateTextFile = (text: string) => {
+    return URL.createObjectURL(new Blob([text],{
+        type:'text/plain;charset=utf-8'
+    }));
+};
