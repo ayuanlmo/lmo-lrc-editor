@@ -2,7 +2,7 @@ import './style.scss';
 import {defineComponent, ref, watch} from "vue";
 import AppConfig from "@/config/AppConfig";
 import {SelectFile} from "@/utils";
-import {AnalyzeLrcs, AnalyzeAudio, CreateTag,ExportLrc} from "@/components/Header/funcs";
+import {AnalyzeLrcs, AnalyzeAudio, CreateTag, ExportLrc} from "@/components/Header/funcs";
 import LmoAudioPlayer from "@/components/AudioPlayer";
 import Store from "@/store";
 
@@ -61,6 +61,7 @@ const Header = defineComponent({
                         }
                         }>打Tag</Y-Button>
                         <Y-Button onclick={() => {
+                            if (!Player.Canplay) return;
                             if (!PlayState.value) {
                                 Player.Play(false);
                                 PlayState.value = true;
@@ -72,8 +73,8 @@ const Header = defineComponent({
                             {PlayState.value ? '暂停' : '播放'}
                         </Y-Button>
                         <Y-Button>预览</Y-Button>
-                        <Y-Button onclick={() => {
-                            ExportLrc();
+                        <Y-Button onclick={async () => {
+                            await ExportLrc();
                         }}>导出歌词</Y-Button>
                     </div>
                 </div>

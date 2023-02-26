@@ -24,8 +24,10 @@ export const AnalyzeAudio = (Audio: HTMLAudioElement): void => {
 
 // 创建Tag
 export const CreateTag = () => {
+    const currentTime: number = parseInt(Store.state.media.currentTime);
+
     Store.commit('SET_CURRENT_LRC_TAG', {
-        time: FormatSec(Store.state.media.currentTime, true),
+        time: FormatSec(currentTime, false),
         lrc: Store.state.lrcList[TagIndex]
     });
 
