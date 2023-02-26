@@ -20,12 +20,14 @@ const LrcItem = defineComponent({
 
             };
 
-            return <div class={'lmo-lrc_editor_lrc_view_content_list_item lmo_flex_box lmo_cursor_pointer'}>
-                <div>00:00</div>
-                <div>{props.lrc}</div>
-                <div>
-                    <Y-SvgIcon onClick={Click} path={delIcon}/>
-                    <Y-SvgIcon path={editIcon}/>
+            return <div class={'lmo-lrc_editor_lrc_view_content_list_item'}>
+                <div class={'lmo_flex_box lmo_cursor_pointer'}>
+                    <div>00:00</div>
+                    <div>{props.lrc}</div>
+                    <div>
+                        <Y-SvgIcon path={editIcon}/>
+                        <Y-SvgIcon onClick={Click} path={delIcon}/>
+                    </div>
                 </div>
             </div>;
         };
